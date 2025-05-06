@@ -10,7 +10,7 @@ export default defineConfig({
         }
     },
     plugins: [
-        svgo(), // Оптимизация SVG
+        svgo(),
         ViteImageOptimizer({
             webp: {
                 quality: 80,
