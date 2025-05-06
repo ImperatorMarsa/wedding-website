@@ -1,11 +1,19 @@
-/* Variables */
+/* Импорт переменных Bootstrap (опционально, чтобы переопределять их ДО загрузки стилей) */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 
-$primary-color: #8e6c88;
+/* Переопределение переменных (если нужно) */
+/* Пример: замена дефолтного $primary */
+/* Variables */
+$primary: #8e6c88;
 $secondary-color: #d4b8c7;
 $accent-color: #a5c4d4;
 $body-bg: #f9f7f8;
 $white: #fff;
 $text-color: #333;
+/* Пример: замена шрифта */
+$font-family-base: 'Montserrat', sans-serif;
 
 /* Mixins */
 @mixin section-styles {
@@ -18,9 +26,13 @@ $text-color: #333;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Импорт всего Bootstrap */
+@import "bootstrap/scss/bootstrap";
+
+
 /* Base styles */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-family-base;
     background-color: $body-bg;
     color: $text-color;
     line-height: 1.6;
@@ -46,17 +58,17 @@ h4 {
 
 .nav-pills {
     .nav-link {
-        color: $primary-color;
+        color: $primary;
 
         &.active {
-            background-color: $primary-color;
+            background-color: $primary;
             color: $white;
         }
     }
 }
 
 .hero-section {
-    background: linear-gradient(rgba($primary-color, 0.7), rgba($primary-color, 0.7)),
+    background: linear-gradient(rgba($primary, 0.7), rgba($primary, 0.7)),
         url('img/hero-bg.jpg') center/cover no-repeat;
     color: $white;
     padding: 120px 0;
@@ -78,7 +90,7 @@ section {
 
     &-number {
         font-size: 2.5rem;
-        color: $primary-color;
+        color: $primary;
         font-weight: 700;
     }
 }
@@ -102,7 +114,7 @@ section {
         top: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid $primary-color;
+        border: 2px solid $primary;
     }
 
     &-content {
@@ -112,7 +124,7 @@ section {
 }
 
 footer {
-    background-color: $primary-color;
+    background-color: $primary;
     color: $white;
     padding: 30px 0;
     text-align: center;

@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 // Countdown Timer
 interface CountdownElements {
   days: HTMLElement;
