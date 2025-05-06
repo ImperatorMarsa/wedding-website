@@ -1,0 +1,9 @@
+{
+	"devDependencies": {
+		"vite": "^6.3.5"
+	},
+	"dependencies": {
+		"vite-plugin-image-optimizer": "^1.1.8",
+		"vite-plugin-svgo": "^1.6.2"
+	}
+}
