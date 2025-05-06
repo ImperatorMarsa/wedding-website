@@ -15,12 +15,5 @@ export default defineConfig({
       includePublic: true,
       logStats: true,
     }),
-  ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/styles/variables.scss";`
-      }
-    }
-  }
+  ]
 })

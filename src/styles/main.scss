@@ -1,0 +1,130 @@
+/* Variables */
+
+$primary-color: #8e6c88;
+$secondary-color: #d4b8c7;
+$accent-color: #a5c4d4;
+$body-bg: #f9f7f8;
+$white: #fff;
+$text-color: #333;
+
+/* Mixins */
+@mixin section-styles {
+    padding: 80px 0;
+    margin-bottom: 30px;
+}
+
+@mixin even-section-styles {
+    background-color: $white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Base styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: $body-bg;
+    color: $text-color;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Components */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    &-brand {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.nav-pills {
+    .nav-link {
+        color: $primary-color;
+
+        &.active {
+            background-color: $primary-color;
+            color: $white;
+        }
+    }
+}
+
+.hero-section {
+    background: linear-gradient(rgba($primary-color, 0.7), rgba($primary-color, 0.7)),
+        url('img/hero-bg.jpg') center/cover no-repeat;
+    color: $white;
+    padding: 120px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section {
+    @include section-styles;
+
+    &:nth-child(even) {
+        @include even-section-styles;
+    }
+}
+
+.countdown {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    &-number {
+        font-size: 2.5rem;
+        color: $primary-color;
+        font-weight: 700;
+    }
+}
+
+.timeline {
+    position: relative;
+    padding-left: 1.5rem;
+
+    &-item {
+        position: relative;
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-badge {
+        position: absolute;
+        left: -1.5rem;
+        top: 0;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid $primary-color;
+    }
+
+    &-content {
+        background: $body-bg;
+        border-radius: 0.25rem;
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    color: $white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+}
