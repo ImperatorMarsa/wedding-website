@@ -35,4 +35,5 @@ jobs:
           publish: dist
           branch: gh-pages
           clean: true
+          folder: dist
           verbose: true

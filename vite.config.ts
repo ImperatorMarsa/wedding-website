@@ -21,11 +21,7 @@ export default defineConfig({
         }),
     ],
 
-    // Adding GitHub Actions for deployment
     build: {
         outDir: 'dist',
-        assetDir: '.',
-        // Enabling GitHub Pages support
-        base: '/',
     }
 });
