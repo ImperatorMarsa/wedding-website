@@ -4,6 +4,12 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import svgo from 'vite-plugin-svgo'
 
 export default defineConfig({
+    server: {
+        middlewareMode: 'ssr',
+        middlewareTypes: {
+            '.js': 'application/javascript',
+        },
+    },
     resolve: {
         alias: {
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
