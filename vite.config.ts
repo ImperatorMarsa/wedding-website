@@ -19,5 +19,13 @@ export default defineConfig({
             includePublic: true,
             logStats: true,
         }),
-    ]
-})
+    ],
+
+    // Adding GitHub Actions for deployment
+    build: {
+        outDir: 'dist',
+        assetDir: '.',
+        // Enabling GitHub Pages support
+        base: '/',
+    }
+});

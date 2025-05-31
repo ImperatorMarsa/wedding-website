@@ -1,0 +1,32 @@
+name: Publish Website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages@v4
+        with:
+          publish: dist
+          branch: gh-pages
+          clean: true
+          verbose: true
