@@ -28,7 +28,7 @@ export default defineConfig({
             logStats: true,
         }),
     ],
-
+    base: '/wedding-website/',
     build: {
         outDir: 'dist',
         assetsDir: 'assets', // Ensure assets are included in the build
