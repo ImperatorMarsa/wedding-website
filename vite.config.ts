@@ -8,6 +8,8 @@ export default defineConfig({
         middlewareMode: 'ssr',
         middlewareTypes: {
             '.js': 'application/javascript',
+            '.css': 'text/css',
+            '.svg': 'image/svg+xml',
         },
     },
     resolve: {
@@ -29,5 +31,6 @@ export default defineConfig({
 
     build: {
         outDir: 'dist',
+        assetsDir: 'assets', // Ensure assets are included in the build
     }
 });
