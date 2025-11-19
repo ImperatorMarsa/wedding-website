@@ -6,14 +6,7 @@
 /* Переопределение переменных (если нужно) */
 /* Пример: замена дефолтного $primary */
 /* Variables */
-$primary: #8e6c88;
-$secondary-color: #d4b8c7;
-$accent-color: #a5c4d4;
-$body-bg: #f9f7f8;
-$white: #fff;
-$text-color: #333;
-/* Пример: замена шрифта */
-$font-family-base: 'Montserrat', sans-serif;
+@import "variables";
 
 /* Mixins */
 @mixin section-styles {
@@ -139,4 +132,51 @@ footer {
     section {
         padding: 50px 0;
     }
+}
+
+/* Кастомные стили чекбоксов и радиокнопок через переменные */
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+    border: 2px solid $color-border;
+    background-color: $color-white;
+    transition: all 0.2s ease;
+}
+
+/* Радиокнопки */
+.form-check-input[type="radio"] {
+    border-radius: 50%;
+}
+
+/* Ховер */
+.form-check-input:hover {
+    border-color: $color-border-hover;
+}
+
+/* Активное состояние */
+.form-check-input:checked {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+/* Точка радиокнопки */
+.form-check-input[type="radio"]:checked {
+    box-shadow: inset 0 0 0 4px $color-white;
+}
+
+/* Галочка чекбокса */
+.form-check-input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23ffffff' d='M12.97 4.97a.75.75 0 0 0-1.06-1.06L7 8.81 4.09 5.88A.75.75 0 1 0 3.03 6.94l3.5 3.5a.75.75 0 0 0 1.06 0l5.38-5.47z'/%3e%3c/svg%3e");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Подписи */
+.form-check-label {
+    margin-left: 0.4rem;
+    cursor: pointer;
+    user-select: none;
 }
