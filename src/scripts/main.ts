@@ -1,4 +1,4 @@
-import 'bootstrap';
+import "bootstrap";
 
 // Countdown Timer
 interface CountdownElements {
@@ -60,8 +60,8 @@ class WeddingCountdown {
     }
 
     private setToZero(): void {
-        Object.values(this.elements).forEach(el => {
-            el.textContent = '0';
+        Object.values(this.elements).forEach((el) => {
+            el.textContent = "0";
         });
     }
 
@@ -84,7 +84,7 @@ class RSVPForm {
     }
 
     private init(): void {
-        this.form.addEventListener('submit', this.handleSubmit.bind(this));
+        this.form.addEventListener("submit", this.handleSubmit.bind(this));
     }
 
     private handleSubmit(event: Event): void {
@@ -92,17 +92,17 @@ class RSVPForm {
 
         if (!this.form.checkValidity()) {
             event.stopPropagation();
-            this.form.classList.add('was-validated');
+            this.form.classList.add("was-validated");
             return;
         }
 
         this.showSuccessMessage();
         this.form.reset();
-        this.form.classList.remove('was-validated');
+        this.form.classList.remove("was-validated");
     }
 
     private showSuccessMessage(): void {
-        alert('Спасибо за ваш ответ! Мы сохранили ваши данные.');
+        alert("Спасибо за ваш ответ! Мы сохранили ваши данные.");
     }
 }
 
@@ -113,14 +113,14 @@ class SmoothScroller {
     }
 
     private init(): void {
-        document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', this.handleClick.bind(this));
+        document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", this.handleClick.bind(this));
         });
     }
 
     private handleClick(event: Event): void {
         event.preventDefault();
-        const targetId = (event.currentTarget as HTMLAnchorElement).getAttribute('href');
+        const targetId = (event.currentTarget as HTMLAnchorElement).getAttribute("href");
 
         if (!targetId) return;
 
@@ -129,26 +129,26 @@ class SmoothScroller {
 
         window.scrollTo({
             top: targetElement.getBoundingClientRect().top + window.pageYOffset - 70,
-            behavior: 'smooth'
+            behavior: "smooth",
         });
     }
 }
 
 // Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Countdown
     const countdownElements = {
-        days: document.getElementById('days') as HTMLElement,
-        hours: document.getElementById('hours') as HTMLElement,
-        minutes: document.getElementById('minutes') as HTMLElement,
-        seconds: document.getElementById('seconds') as HTMLElement
+        days: document.getElementById("days") as HTMLElement,
+        hours: document.getElementById("hours") as HTMLElement,
+        minutes: document.getElementById("minutes") as HTMLElement,
+        seconds: document.getElementById("seconds") as HTMLElement,
     };
 
-    new WeddingCountdown(countdownElements, '2026-08-22T16:00:00');
+    new WeddingCountdown(countdownElements, "2026-08-22T16:00:00");
 
     // RSVP Form
     try {
-        new RSVPForm('rsvpForm');
+        new RSVPForm("rsvpForm");
     } catch (error) {
         console.error(error);
     }
