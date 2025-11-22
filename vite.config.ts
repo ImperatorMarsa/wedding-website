@@ -5,7 +5,7 @@ import svgo from 'vite-plugin-svgo'
 
 export default defineConfig({
     server: {
-        middlewareMode: 'ssr',
+        prot: 3000,
         middlewareTypes: {
             '.js': 'application/javascript',
             '.css': 'text/css',
@@ -32,5 +32,5 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         assetsDir: 'assets', // Ensure assets are included in the build
-    }
+    },
 });
