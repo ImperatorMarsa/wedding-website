@@ -28,8 +28,8 @@
     <!-- Custom CSS -->
 
     <title>Анны и Тимофея свадьба | 22.08.2026</title>
-  <script type="module" crossorigin src="/wedding-website/assets/index-B2Aj3Lzd.js"></script>
-  <link rel="stylesheet" crossorigin href="/wedding-website/assets/index-DH8SOY6W.css">
+  <script type="module" crossorigin src="/wedding-website/assets/index-fXrhkYkW.js"></script>
+  <link rel="stylesheet" crossorigin href="/wedding-website/assets/index-B5oqkW3m.css">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
@@ -70,17 +70,23 @@
     </nav>
 
     <section class="hero-section" id="home">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h3 class="mb-4">Приглашение на свадьбу</h3>
-                    <h1 class="display-3 mb-4">Анна & Тимофей</h1>
-                    <h4 class="mb-5">22 августа 2026 года</h4>
-                    <a href="#rsvp" class="btn btn-light btn-lg px-4 py-2">Подтвердить присутствие</a>
+        <div class="container d-flex flex-column align-items-center justify-content-center h-100">
+            <div class="hero-content text-center position-relative">
+                <div class="text-on-ring d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="mb-2 text-gray">Приглашение на свадьбу</h3>
+                    <hr class="dotted-divider my-2">
+                    <h1 class="display-3 text-gray">Анны & Тимофя</h1>
+                    <hr class="dotted-divider my-2">
+                    <h4 class="mb-0 text-gray">22 августа 2026 года</h4>
                 </div>
+                <a href="#rsvp" class="btn btn-light btn-lg px-4 py-2 mt-4 hero-btn">
+                    Подтвердить присутствие
+                </a>
             </div>
         </div>
     </section>
+
+    <div class="section-separator mt-5"></div>
 
     <section id="map" class="py-5">
         <div class="container">
@@ -111,7 +117,9 @@
         </div>
     </section>
 
-    <section id="events" class="py-5 bg-white">
+    <div class="section-separator"></div>
+
+    <section id="events" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -151,6 +159,8 @@
         </div>
     </section>
 
+    <div class="section-separator"></div>
+
     <section id="dress-code" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -187,7 +197,9 @@
         </div>
     </section>
 
-    <section id="faq" class="py-5 bg-white">
+    <div class="section-separator"></div>
+
+    <section id="faq" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -248,6 +260,8 @@
         </div>
     </section>
 
+    <div class="section-separator"></div>
+
     <section id="date" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -277,152 +291,157 @@
         </div>
     </section>
 
-    <section id="rsvp" class="py-5 bg-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="text-center mb-5">Подтвердите, пожалуйста, свое присутствие</h2>
-                    <form id="rsvpForm" class="needs-validation" novalidate>
-                        <div class="row mb-4">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Ваше имя *</label>
-                                <input type="text" class="form-control" id="name" required>
-                                <div class="invalid-feedback">
-                                    Пожалуйста, укажите ваше имя.
+    <div class="section-separator"></div>
+
+    <div class="footer-bg">
+        <section id="rsvp" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-center mb-5">Подтвердите, пожалуйста, свое присутствие</h2>
+                        <form id="rsvpForm" class="needs-validation" novalidate>
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Ваше имя *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, укажите ваше имя.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="surname" class="form-label">Ваша фамилия</label>
+                                    <input type="text" class="form-control" id="surname">
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="surname" class="form-label">Ваша фамилия</label>
-                                <input type="text" class="form-control" id="surname">
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">Телефон *</label>
+                                <input type="phone" class="form-control" id="phone" required>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, укажите корректный телефон.
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="phone" class="form-label">Телефон *</label>
-                            <input type="phone" class="form-control" id="phone" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, укажите корректный телефон.
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, укажите корректный email.
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, укажите корректный email.
+                            <div class="mb-4">
+                                <label for="guests" class="form-label">Количество гостей *</label>
+                                <select class="form-select" id="guests" required>
+                                    <option value="" selected disabled>Выберите количество</option>
+                                    <option value="1">1 (только я)</option>
+                                    <option value="2">2 (я + 1 гость)</option>
+                                    <option value="3">3 (я + 2 гостя)</option>
+                                    <option value="4">4 (я + 3 гостя)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, укажите количество гостей.
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="guests" class="form-label">Количество гостей *</label>
-                            <select class="form-select" id="guests" required>
-                                <option value="" selected disabled>Выберите количество</option>
-                                <option value="1">1 (только я)</option>
-                                <option value="2">2 (я + 1 гость)</option>
-                                <option value="3">3 (я + 2 гостя)</option>
-                                <option value="4">4 (я + 3 гостя)</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Пожалуйста, укажите количество гостей.
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label">Предпочтения в алкоголе</label>
+                            <div class="mb-4">
+                                <label class="form-label">Предпочтения в алкоголе</label>
 
-                            <p class="mb-1 fw-bold">Игристое</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="sparklingSemiSweet"
-                                    value="Игристое полусладкое">
-                                <label class="form-check-label" for="sparklingSemiSweet">Полусладкое</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="sparklingBrut"
-                                    value="Игристое брют">
-                                <label class="form-check-label" for="sparklingBrut">Брют</label>
-                            </div>
+                                <p class="mb-1 fw-bold">Игристое</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sparklingSemiSweet"
+                                        value="Игристое полусладкое">
+                                    <label class="form-check-label" for="sparklingSemiSweet">Полусладкое</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="sparklingBrut"
+                                        value="Игристое брют">
+                                    <label class="form-check-label" for="sparklingBrut">Брют</label>
+                                </div>
 
-                            <p class="mb-1 fw-bold">Вино</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="wineDry" value="Вино сухое">
-                                <label class="form-check-label" for="wineDry">Сухое</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="wineSemiDry" value="Вино полусухое">
-                                <label class="form-check-label" for="wineSemiDry">Полусухое</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="wineSemiSweet"
-                                    value="Вино полусладкое">
-                                <label class="form-check-label" for="wineSemiSweet">Полусладкое</label>
-                            </div>
+                                <p class="mb-1 fw-bold">Вино</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="wineDry" value="Вино сухое">
+                                    <label class="form-check-label" for="wineDry">Сухое</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="wineSemiDry"
+                                        value="Вино полусухое">
+                                    <label class="form-check-label" for="wineSemiDry">Полусухое</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="wineSemiSweet"
+                                        value="Вино полусладкое">
+                                    <label class="form-check-label" for="wineSemiSweet">Полусладкое</label>
+                                </div>
 
-                            <p class="mb-1 fw-bold">Крепкий алкоголь</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="vodka" value="Водка">
-                                <label class="form-check-label" for="vodka">Водка</label>
+                                <p class="mb-1 fw-bold">Крепкий алкоголь</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="vodka" value="Водка">
+                                    <label class="form-check-label" for="vodka">Водка</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cognac" value="Коньяк">
+                                    <label class="form-check-label" for="cognac">Коньяк</label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="cognac" value="Коньяк">
-                                <label class="form-check-label" for="cognac">Коньяк</label>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label">Трансфер после свадьбы</label>
+                            <div class="mb-4">
+                                <label class="form-label">Трансфер после свадьбы</label>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="transfer" id="transferOwn"
-                                    value="Уеду на своем транспорте" required>
-                                <label class="form-check-label" for="transferOwn">
-                                    Уеду на своем транспорте
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="transfer" id="transferOwn"
+                                        value="Уеду на своем транспорте" required>
+                                    <label class="form-check-label" for="transferOwn">
+                                        Уеду на своем транспорте
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="transfer" id="transferNeed"
-                                    value="Мне нужен транспорт после свадьбы до города">
-                                <label class="form-check-label" for="transferNeed">
-                                    Да, мне нужен транспорт после свадьбы до города
-                                </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="transfer" id="transferNeed"
+                                        value="Мне нужен транспорт после свадьбы до города">
+                                    <label class="form-check-label" for="transferNeed">
+                                        Да, мне нужен транспорт после свадьбы до города
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label">Вы сможете присутствовать? *</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="attendance" id="attendingYes"
-                                    value="yes" required>
-                                <label class="form-check-label" for="attendingYes">
-                                    Да, с радостью приду!
-                                </label>
+                            <div class="mb-4">
+                                <label class="form-label">Вы сможете присутствовать? *</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="attendance" id="attendingYes"
+                                        value="yes" required>
+                                    <label class="form-check-label" for="attendingYes">
+                                        Да, с радостью приду!
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="attendance" id="attendingNo"
+                                        value="no">
+                                    <label class="form-check-label" for="attendingNo">
+                                        К сожалению, не смогу прийти
+                                    </label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="attendance" id="attendingNo"
-                                    value="no">
-                                <label class="form-check-label" for="attendingNo">
-                                    К сожалению, не смогу прийти
-                                </label>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Ваши пожелания или комментарии</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
                             </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="form-label">Ваши пожелания или комментарии</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
-                        </div>
-                        <div class="d-grid">
-                            <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
-                        </div>
-                    </form>
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p class="mb-0">Анна & Тимофей</p>
-                    <p class="mb-0">22 августа 2026 года</p>
-                    <p class="mb-0 mt-3">С любовью и благодарностью</p>
+        <footer class="py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">Анна & Тимофей</p>
+                        <p class="mb-0">22 августа 2026 года</p>
+                        <p class="mb-0 mt-3">С любовью и благодарностью</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Custom JS -->
 </body>
