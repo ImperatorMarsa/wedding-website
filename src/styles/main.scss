@@ -1,8 +1,3 @@
-/* Импорт переменных Bootstrap (опционально, чтобы переопределять их ДО загрузки стилей) */
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
-
 /* Переопределение переменных (если нужно) */
 /* Variables */
 @import "variables";
