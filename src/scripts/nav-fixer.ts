@@ -3,9 +3,9 @@ function adjustContentPadding(): void {
     const homeSection = document.getElementById("home");
 
     if (navbar && homeSection) {
-        const navbarHeight = navbar.offsetHeight + 16;
+        const navbarHeight = navbar.offsetHeight;
 
-        homeSection.style.paddingTop = `${navbarHeight}px`;
+        homeSection.style.marginTop = `${navbarHeight}px`;
 
         return;
     }
