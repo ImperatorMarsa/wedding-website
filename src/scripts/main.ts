@@ -1,4 +1,5 @@
 import "bootstrap";
+import { Tooltip } from "bootstrap";
 import { WeddingCountdown } from "./WeddingCountdown";
 import { RSVPForm } from "./RSVPForm";
 import { SmoothScroller } from "./SmoothScroller";
@@ -28,3 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 initEvent();
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+
+const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl),
+);

@@ -113,3 +113,27 @@
         background-size: contain;
     }
 }
+
+.color-circle {
+    $size: 60px;
+
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    cursor: help;
+
+    background-color: var(--color-hex);
+
+    border: 2px solid rgba(255, 255, 255, 0.9); // Светлая граница
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2); // Эффект тени и тонкая обводка
+
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &[style*="#fffff0"] {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+}
