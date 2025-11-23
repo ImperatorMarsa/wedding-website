@@ -2,6 +2,7 @@ import "bootstrap";
 import { WeddingCountdown } from "./WeddingCountdown";
 import { RSVPForm } from "./RSVPForm";
 import { SmoothScroller } from "./SmoothScroller";
+import { initEvent } from "./nav-fixer";
 
 // Initialize all functionality when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,3 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Smooth Scrolling
     new SmoothScroller();
 });
+
+initEvent();
