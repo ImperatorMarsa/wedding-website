@@ -60,3 +60,12 @@
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
 }
+
+.big-margin {
+    margin-top: 130px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 70px;
+
+    }
+}
