@@ -105,6 +105,7 @@
                             <p>городской округ Ставрополь, хутор Грушёвый, район Волчьих ворот, 1</p>
                             <p>Начало в 16:00</p>
                         </div>
+
                         <div class="col-md-6 mb-4">
                             <h4>Банкет</h4>
                             <p>Тот же ресторан</p>
@@ -131,6 +132,7 @@
                                 <p>Встреча гостей, фуршет</p>
                             </div>
                         </div>
+
                         <div class="timeline-item mb-5">
                             <div class="timeline-badge bg-primary rounded-circle"></div>
                             <div class="timeline-content p-4">
@@ -138,6 +140,7 @@
                                 <p>Церемония бракосочетания</p>
                             </div>
                         </div>
+
                         <div class="timeline-item mb-5">
                             <div class="timeline-badge bg-primary rounded-circle"></div>
                             <div class="timeline-content p-4">
@@ -145,6 +148,7 @@
                                 <p>Фотосессия, прогулка</p>
                             </div>
                         </div>
+
                         <div class="timeline-item mb-5">
                             <div class="timeline-badge bg-primary rounded-circle"></div>
                             <div class="timeline-content p-4">
@@ -293,12 +297,14 @@
                             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                                 data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Мы будем рады видеть детей на церемонии, но банкет рассчитан только на взрослых.
+                                    Мы будем рады видеть детей на церемонии.
                                     Пожалуйста, укажите в
-                                    форме RSVP, планируете ли вы взять с собой детей.
+                                    форме «Подтвердите, пожалуйста, свое присутствие», планируете ли вы взять с собой
+                                    детей.
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item mb-3 border-0 shadow-sm">
                             <h3 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -312,10 +318,27 @@
                                     Ваше присутствие - уже прекрасный подарок для нас. Если вы хотите сделать
                                     материальный подарок, мы
                                     будем благодарны за конверт с деньгами, который поможет нам в организации нашего
-                                    совместного будущего.
+                                    совместного будущего. Пожайлуста подпешите их.
                                 </div>
                             </div>
                         </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Нужно ли дарить цветы?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Если вы планируете дарить цветы, то луче замените на сабачий корм (для пожертвовыния
+                                    в приют)
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="accordion-item mb-3 border-0 shadow-sm">
                             <h3 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -345,19 +368,22 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-5">До свадьбы осталось:</h2>
-                    <div class="countdown d-flex justify-content-center mb-5">
+                    <div class="countdown d-flex justify-content-center mb-5 px-3">
                         <div class="text-center mx-3 display-6 fw-bold">
                             <div class="countdown-number" id="days">--</div>
                             <div>дней</div>
                         </div>
+
                         <div class="text-center mx-3 display-6 fw-bold">
                             <div class="countdown-number" id="hours">--</div>
                             <div>часов</div>
                         </div>
+
                         <div class="text-center mx-3 display-6 fw-bold">
                             <div class="countdown-number" id="minutes">--</div>
                             <div>минут</div>
                         </div>
+
                         <div class="text-center mx-3 display-6 fw-bold">
                             <div class="countdown-number" id="seconds">--</div>
                             <div>секунд</div>
@@ -405,6 +431,7 @@
                                     Пожалуйста, укажите корректный email.
                                 </div>
                             </div>
+
                             <div class="mb-4">
                                 <label for="guests" class="form-label">Количество гостей *</label>
                                 <select class="form-select" id="guests" required>
@@ -413,52 +440,14 @@
                                     <option value="2">2 (я + 1 гость)</option>
                                     <option value="3">3 (я + 2 гостя)</option>
                                     <option value="4">4 (я + 3 гостя)</option>
+                                    <option value="4">4 (я + 4 гостя)</option>
+                                    <option value="4">4 (я + 5 гостя)</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Пожалуйста, укажите количество гостей.
                                 </div>
                             </div>
-                            <div class="mb-4">
-                                <label class="form-label">Предпочтения в алкоголе</label>
 
-                                <p class="mb-1 fw-bold">Игристое</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="sparklingSemiSweet"
-                                        value="Игристое полусладкое">
-                                    <label class="form-check-label" for="sparklingSemiSweet">Полусладкое</label>
-                                </div>
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="sparklingBrut"
-                                        value="Игристое брют">
-                                    <label class="form-check-label" for="sparklingBrut">Брют</label>
-                                </div>
-
-                                <p class="mb-1 fw-bold">Вино</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="wineDry" value="Вино сухое">
-                                    <label class="form-check-label" for="wineDry">Сухое</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="wineSemiDry"
-                                        value="Вино полусухое">
-                                    <label class="form-check-label" for="wineSemiDry">Полусухое</label>
-                                </div>
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="wineSemiSweet"
-                                        value="Вино полусладкое">
-                                    <label class="form-check-label" for="wineSemiSweet">Полусладкое</label>
-                                </div>
-
-                                <p class="mb-1 fw-bold">Крепкий алкоголь</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="vodka" value="Водка">
-                                    <label class="form-check-label" for="vodka">Водка</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="cognac" value="Коньяк">
-                                    <label class="form-check-label" for="cognac">Коньяк</label>
-                                </div>
-                            </div>
                             <div class="mb-4">
                                 <label class="form-label">Трансфер после свадьбы</label>
 
@@ -478,6 +467,7 @@
                                     </label>
                                 </div>
                             </div>
+
                             <div class="mb-4">
                                 <label class="form-label">Вы сможете присутствовать? *</label>
                                 <div class="form-check">
@@ -495,6 +485,7 @@
                                     </label>
                                 </div>
                             </div>
+
                             <div class="mb-4">
                                 <label for="message" class="form-label">Ваши пожелания или комментарии</label>
                                 <textarea class="form-control" id="message" rows="3"></textarea>
