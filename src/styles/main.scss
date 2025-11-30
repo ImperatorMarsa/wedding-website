@@ -7,83 +7,15 @@
 
 // --- Пользовательские стили для Hero Section ---
 
-.hero-section {
-    // Высота секции (например, на весь экран)
-    position: relative;
+.hero-bg-img {
+    background: url('/src/assets/images/bg-home.jpg') no-repeat top center;
+    background-size: cover; // Растянуть по ширине, обрезая по высоте
 
-    // Задний фон всей секции
-    background: url('/src/assets/images/bg-home.jpg') no-repeat center top;
-    background-size: contain;
+    height: 500px !important;
 
-    // Обеспечиваем, что контейнер занимает всю доступную высоту для центрирования
-    .container {
-        height: 100%;
-
-        .hero-content {
-            // Чтобы текст и кнопка центрировались как единое целое
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    .text-on-ring {
-        // Размеры венка. Вы должны настроить эти значения под ваше изображение 'bg-home-middle.png'
-        width: 350px;
-        height: 350px;
-
-        // Центрирование текста внутри блока
-        // 'd-flex flex-column align-items-center justify-content-center' в HTML уже делает это
-
-        // Изображение венка как фон
-        background: url('/src/assets/images/bg-home-middle.png') no-repeat center center;
-        background-size: contain;
-
-        h3,
-        h1,
-        h4 {
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
-        }
-
-        .dotted-divider {
-            border: none; // Удаляем стандартную границу
-            height: 1px; // Задаем высоту
-            width: 100%; // Ширина линии
-            opacity: 0.7;
-
-            // Создаем пунктирную линию
-            // border-top - предпочтительнее для <hr>, чем border-bottom
-            border-top: 1px dotted $dark;
-
-            // Переопределяем стандартные Bootstrap отступы (my-2 уже в HTML)
-            margin-top: 0.5rem !important;
-            margin-bottom: 0.5rem !important;
-        }
-    }
-}
-
-// Адаптивность для больших экранов (если венок должен быть больше)
-@include media-breakpoint-up(md) {
-    .hero-section {
-        .text-on-ring {
-            width: 500px;
-            height: 500px;
-
-            h3 {
-                font-size: 2rem;
-            }
-
-            h1.display-3 {
-                font-size: 4rem;
-                margin-top: 1rem !important;
-                margin-bottom: 1rem !important;
-            }
-
-            h4 {
-                font-size: 2.25rem;
-            }
-        }
+    @include media-breakpoint-down(md) {
+        background-size: contain; // Растянуть по ширине, обрезая по высоте
+        height: 350px !important;
     }
 }
 
@@ -114,26 +46,17 @@
     }
 }
 
-.color-circle {
-    $size: 60px;
+.dotted-divider {
+    border: none; // Удаляем стандартную границу
+    height: 1px; // Задаем высоту
+    width: 100%; // Ширина линии
+    opacity: 0.7;
 
-    width: $size;
-    height: $size;
-    border-radius: 50%;
-    cursor: help;
+    // Создаем пунктирную линию
+    // border-top - предпочтительнее для <hr>, чем border-bottom
+    border-top: 1px dotted $dark;
 
-    background-color: var(--color-hex);
-
-    border: 2px solid rgba(255, 255, 255, 0.9); // Светлая граница
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2); // Эффект тени и тонкая обводка
-
-    transition: transform 0.2s ease-in-out;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-
-    &[style*="#fffff0"] {
-        border: 2px solid rgba(0, 0, 0, 0.1);
-    }
+    // Переопределяем стандартные Bootstrap отступы (my-2 уже в HTML)
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
 }
