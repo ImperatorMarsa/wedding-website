@@ -1,0 +1,143 @@
+// 1. Сначала импортируем Bootstrap (убедитесь, что он установлен: npm i bootstrap)
+@import "bootstrap/scss/bootstrap";
+
+// 2. Ваши кастомные переменные и шрифты
+$font-serif: 'Playfair Display', serif;
+$font-sans: 'Montserrat', sans-serif;
+
+$color-primary: #7D8471; // Оливковый
+$color-bg-light: #F9F7F2; // Молочный
+$color-text: #333;
+
+body {
+    font-family: $font-sans;
+    color: $color-text;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+    font-family: $font-serif;
+}
+
+// Переопределение кнопок Bootstrap
+.btn-primary {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover {
+        background-color: darken($color-primary, 10%);
+        border-color: darken($color-primary, 10%);
+    }
+}
+
+// Hero Section
+.hero-section {
+    height: 100vh;
+    background-image: url('/src/assets/hero-bg.jpg'); // Замените на ваше фото
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4); // Затемнение фото
+    }
+
+    .names {
+        font-weight: 700;
+    }
+}
+
+// Section Title
+.section-title {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+
+    // Декоративная линия под заголовком
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: $color-primary;
+        margin: 10px auto 0;
+    }
+}
+
+// Timeline (Вертикальная линия)
+.timeline-item {
+    .time {
+        font-weight: bold;
+        font-family: $font-serif;
+        font-size: 1.2rem;
+    }
+
+    .separator {
+        border-right: 1px solid #ccc;
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: -6px; // Центрирование на линии
+        }
+    }
+
+    &:last-child .separator {
+        border-right: none; // Убираем линию у последнего элемента
+    }
+}
+
+// Dress Code Circles
+.palette {
+    .color-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+}
+
+// Анимации (простые классы для появления)
+.animate-fade-up {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
