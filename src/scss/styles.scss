@@ -1,21 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 @import "fade";
 
-// Переменные
-$primary-color: #0d6efd;
-$secondary-color: #6c757d;
-$success-color: #198754;
-$warning-color: #ffc107;
-$danger-color: #dc3545;
-$light-color: #f8f9fa;
-$dark-color: #212529;
-
-.big-margin {
-    margin-top: 700px;
-    margin-bottom: 700px;
-    margin-left: 50px;
-}
-
 // Анимированные элементы (изначально скрыты)
 .animate-on-scroll {
     opacity: 0;
