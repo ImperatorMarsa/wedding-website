@@ -1,0 +1,31 @@
+{
+    "name": "wedding-website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/js/main.js",
+    "scripts": {
+        "start": "vite",
+        "build": "vite build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ImperatorMarsa/wedding-website.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/ImperatorMarsa/wedding-website/issues"
+    },
+    "homepage": "https://github.com/ImperatorMarsa/wedding-website#readme",
+    "devDependencies": {
+        "sass": "^1.94.2",
+        "vite": "^7.2.6"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.8"
+    }
+}
