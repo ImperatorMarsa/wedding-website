@@ -1,6 +1,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "fade";
 
+/* @import '@fontsource/roboto/index.css'; */
+/* @import '@fontsource/merriweather/index.css'; */
+
 // Индикатор скролла
 .scroll-indicator {
     .mouse {
@@ -34,4 +37,8 @@
         opacity: 0;
         transform: translateX(-50%) translateY(20px);
     }
+}
+
+.font-serif {
+    font-family: 'Merriweather', 'Times New Roman', Times, Georgia, serif;
 }
