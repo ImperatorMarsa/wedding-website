@@ -8,19 +8,36 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <section class="fade-in-down" id="main">
-            <h1>main</h1>
+    <!-- Основной контент -->
+    <main class="container-fluid p-0">
+        <!-- Дом-->
+        <section id="home" class="big-margin">
+            <h1 class="animate-on-scroll" data-animation="fade-in-up">
+                home
+            </h1>
         </section>
 
-        <section class="fade-in-left" id="place">
-            <h1>place</h1>
+        <!-- Секция "О нас" -->
+        <section id="about" class="big-margin">
+            <h1 class="animate-on-scroll" data-animation="fade-in-down">
+                about
+            </h1>
         </section>
 
-        <section class="fade-in-right" id="plan">
-            <h1>plan</h1>
+        <!-- Секция услуг -->
+        <section id="services" class="big-margin">
+            <h1 class="animate-on-scroll" data-animation="fade-in-left" data-delay="400">
+                services
+            </h1>
         </section>
-    </div>
+
+        <!-- Секция контактов -->
+        <section id="contact" class="big-margin">
+            <h1 class="animate-on-scroll" data-animation="fade-in-right">
+                contact
+            </h1>
+        </section>
+    </main>
 
     <script type="module" src="./js/main.js"></script>
 </body>

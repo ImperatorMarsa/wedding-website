@@ -1,28 +1,29 @@
-// Анимации появления при скроллинге
-// ================================
-
-// Базовые настройки
-$animation-distance: 50px;
-$animation-duration: 0.8s;
-$animation-delay-step: 0.1s;
+$fade-in-distance: 100px;
+$fade-in-duration: 0.8s;
+$fade-in-delay: 0s;
 
 // Базовый класс для всех анимаций
-.fade-in {
+.animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
 
-    &.animated {
+    // Отключение анимации для пользователей, которые предпочитают их не видеть
+    @media (prefers-reduced-motion: reduce) {
         opacity: 1;
-        transform: translateY(0);
+        transition: none;
+        transform: none !important;
     }
 }
 
-// Fade In Up
+// Общие стили для анимаций
+@mixin animation-base {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+// Анимация появления снизу (fade-in-up)
 .fade-in-up {
-    opacity: 0;
-    transform: translateY($animation-distance);
-    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+    @include animation-base;
+    transform: translateY($fade-in-distance);
 
     &.animated {
         opacity: 1;
@@ -30,11 +31,10 @@ $animation-delay-step: 0.1s;
     }
 }
 
-// Fade In Down
+// Анимация появления сверху (fade-in-down)
 .fade-in-down {
-    opacity: 0;
-    transform: translateY(-$animation-distance);
-    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+    @include animation-base;
+    transform: translateY(-$fade-in-distance);
 
     &.animated {
         opacity: 1;
@@ -42,11 +42,10 @@ $animation-delay-step: 0.1s;
     }
 }
 
-// Fade In Left
+// Анимация появления слева (fade-in-left)
 .fade-in-left {
-    opacity: 0;
-    transform: translateX($animation-distance);
-    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+    @include animation-base;
+    transform: translateX(-$fade-in-distance);
 
     &.animated {
         opacity: 1;
@@ -54,49 +53,31 @@ $animation-delay-step: 0.1s;
     }
 }
 
-// Fade In Right
+// Анимация появления справа (fade-in-right)
 .fade-in-right {
-    opacity: 0;
-    transform: translateX(-$animation-distance);
-    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+    @include animation-base;
+    transform: translateX($fade-in-distance);
 
     &.animated {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+// Анимация увеличения (fade-in-zoom)
+.fade-in-zoom {
+    @include animation-base;
+    transform: scale(0.9);
+
+    &.animated {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
 // Задержки для анимаций
 @for $i from 1 through 10 {
-    .delay-#{$i} {
-        transition-delay: #{$i * $animation-delay-step};
-    }
-}
-
-// Отключаем анимации для пользователей, которые предпочитают уменьшенное движение
-@media (prefers-reduced-motion: reduce) {
-
-    .fade-in,
-    .fade-in-up,
-    .fade-in-down,
-    .fade-in-left,
-    .fade-in-right {
-        transition: opacity 0.4s ease-out;
-        transform: none !important;
-    }
-}
-
-// Responsive варианты
-// Для мобильных устройств - уменьшаем дистанцию анимации
-@include media-breakpoint-down(md) {
-
-    .fade-in-up,
-    .fade-in-down {
-        transform: translateY($animation-distance * 0.5);
-    }
-
-    .fade-in-left,
-    .fade-in-right {
-        transform: translateX($animation-distance * 0.5);
+    .delay-#{$i * 100} {
+        transition-delay: #{$i * 0.1}s !important;
     }
 }
