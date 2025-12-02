@@ -1,15 +1,3 @@
 @import "bootstrap/scss/bootstrap";
 
-@keyframes fadeInAnimation {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeInAnimation 1s ease-in-out forwards;
-}
+@import "fade"

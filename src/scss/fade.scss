@@ -1,0 +1,102 @@
+// Анимации появления при скроллинге
+// ================================
+
+// Базовые настройки
+$animation-distance: 50px;
+$animation-duration: 0.8s;
+$animation-delay-step: 0.1s;
+
+// Базовый класс для всех анимаций
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Fade In Up
+.fade-in-up {
+    opacity: 0;
+    transform: translateY($animation-distance);
+    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Fade In Down
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-$animation-distance);
+    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Fade In Left
+.fade-in-left {
+    opacity: 0;
+    transform: translateX($animation-distance);
+    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+
+    &.animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// Fade In Right
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(-$animation-distance);
+    transition: opacity $animation-duration ease-out, transform $animation-duration ease-out;
+
+    &.animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// Задержки для анимаций
+@for $i from 1 through 10 {
+    .delay-#{$i} {
+        transition-delay: #{$i * $animation-delay-step};
+    }
+}
+
+// Отключаем анимации для пользователей, которые предпочитают уменьшенное движение
+@media (prefers-reduced-motion: reduce) {
+
+    .fade-in,
+    .fade-in-up,
+    .fade-in-down,
+    .fade-in-left,
+    .fade-in-right {
+        transition: opacity 0.4s ease-out;
+        transform: none !important;
+    }
+}
+
+// Responsive варианты
+// Для мобильных устройств - уменьшаем дистанцию анимации
+@include media-breakpoint-down(md) {
+
+    .fade-in-up,
+    .fade-in-down {
+        transform: translateY($animation-distance * 0.5);
+    }
+
+    .fade-in-left,
+    .fade-in-right {
+        transform: translateX($animation-distance * 0.5);
+    }
+}
