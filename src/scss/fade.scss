@@ -1,21 +1,35 @@
 // 1. Конфигурация (переменные с флагом !default для легкого переопределения)
 $anim-distance: 100px !default;
 $anim-duration: 0.8s !default;
-$anim-ease: ease !default;
+// 💡 Изменение: более мягкое замедление в конце (эффект ease-out)
+// 'ease-out-quint' для более выраженного замедления
+$anim-ease: cubic-bezier(0.23, 1, 0.32, 1) !default;
+$anim-stretch-scale: 1.7 !default; // Коэффициент растягивания
 
 // 2. Карта анимаций (Название : Начальная трансформация)
+// Добавление масштабирования (scale) для эффекта "растягивания" в начальной позиции.
 $animations: (
-    'up': translateY($anim-distance),
-    'down': translateY(-$anim-distance),
-    'left': translateX(-$anim-distance),
-    'right': translateX($anim-distance),
-    'zoom': scale(0.9)
+    // Движение вверх (Up): translateY, растяжение по оси Y (scaleY)
+    'up': (translate: translateY($anim-distance),
+        scale: scaleY($anim-stretch-scale)),
+    // Движение вниз (Down): translateY, растяжение по оси Y (scaleY)
+    'down': (translate: translateY(-$anim-distance),
+        scale: scaleY($anim-stretch-scale)),
+    // Движение влево (Left): translateX, растяжение по оси X (scaleX)
+    'left': (translate: translateX(-$anim-distance),
+        scale: scaleX($anim-stretch-scale)),
+    // Движение вправо (Right): translateX, растяжение по оси X (scaleX)
+    'right': (translate: translateX($anim-distance),
+        scale: scaleX($anim-stretch-scale)),
+    // Зум (Zoom): Только масштабирование (немного "сжато")
+    'zoom': (translate: none,
+        scale: scale(0.9))
 );
 
 // 3. Шаблон общего поведения (Placeholder)
-// Используем %, чтобы избежать дублирования кода в CSS (группировка селекторов)
 %animate-base {
     opacity: 0;
+    // 💡 Изменение: Указываем трансформации явно, т.к. теперь их две (translate и scale)
     transition: opacity $anim-duration $anim-ease,
         transform $anim-duration $anim-ease;
     will-change: opacity, transform;
@@ -30,14 +44,17 @@ $animations: (
 
 // 4. Генерация классов анимации
 // Проходим циклом по карте, создавая классы .fade-in-up, .fade-in-down и т.д.
-@each $name, $transform in $animations {
+@each $name, $transforms in $animations {
     .fade-in-#{$name} {
         @extend %animate-base;
-        transform: $transform;
+        // 💡 Изменение: Комбинируем начальные трансформации
+        transform: map-get($transforms, translate) map-get($transforms, scale);
 
         &.animated {
             opacity: 1;
-            transform: none; // Сбрасывает любую трансформацию (scale или translate) в 0/1
+            // Сбрасываем трансформации до конечного состояния:
+            // translate - none, scale - scale(1)
+            transform: none;
         }
     }
 }
@@ -45,13 +62,17 @@ $animations: (
 // 5. Генерация задержек (Utility classes)
 @for $i from 1 through 10 {
     .delay-#{$i * 100} {
-        transition-delay: #{$i * 0.1}s;
+        transition-delay: #{$i * 0.08}s;
     }
 }
 
 // Базовый класс для всех анимаций
 .animate-on-scroll {
     opacity: 0;
+    // Добавляем transform: none; чтобы гарантировать, что элементы,
+    // не имеющие дополнительных классов анимации, будут иметь 
+    // правильное конечное состояние при появлении.
+    /* transform: none; */
 
     // Отключение анимации для пользователей, которые предпочитают их не видеть
     @media (prefers-reduced-motion: reduce) {
