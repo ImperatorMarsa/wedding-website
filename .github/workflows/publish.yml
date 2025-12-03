@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - dev-fromscratch
 
 jobs:
   build-and-deploy:
@@ -35,5 +36,5 @@ jobs:
           publish: dist
           branch: gh-pages
           clean: true
-          folder: dist
+          folder: src/dist
           verbose: true
