@@ -1,6 +1,53 @@
-$fade-in-distance: 100px;
-$fade-in-duration: 0.8s;
-$fade-in-delay: 0s;
+// 1. Конфигурация (переменные с флагом !default для легкого переопределения)
+$anim-distance: 100px !default;
+$anim-duration: 0.8s !default;
+$anim-ease: ease !default;
+
+// 2. Карта анимаций (Название : Начальная трансформация)
+$animations: (
+    'up': translateY($anim-distance),
+    'down': translateY(-$anim-distance),
+    'left': translateX(-$anim-distance),
+    'right': translateX($anim-distance),
+    'zoom': scale(0.9)
+);
+
+// 3. Шаблон общего поведения (Placeholder)
+// Используем %, чтобы избежать дублирования кода в CSS (группировка селекторов)
+%animate-base {
+    opacity: 0;
+    transition: opacity $anim-duration $anim-ease,
+        transform $anim-duration $anim-ease;
+    will-change: opacity, transform;
+
+    // Доступность: отключаем движение для чувствительных пользователей
+    @media (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        transition: none;
+        transform: none !important;
+    }
+}
+
+// 4. Генерация классов анимации
+// Проходим циклом по карте, создавая классы .fade-in-up, .fade-in-down и т.д.
+@each $name, $transform in $animations {
+    .fade-in-#{$name} {
+        @extend %animate-base;
+        transform: $transform;
+
+        &.animated {
+            opacity: 1;
+            transform: none; // Сбрасывает любую трансформацию (scale или translate) в 0/1
+        }
+    }
+}
+
+// 5. Генерация задержек (Utility classes)
+@for $i from 1 through 10 {
+    .delay-#{$i * 100} {
+        transition-delay: #{$i * 0.1}s;
+    }
+}
 
 // Базовый класс для всех анимаций
 .animate-on-scroll {
@@ -11,73 +58,5 @@ $fade-in-delay: 0s;
         opacity: 1;
         transition: none;
         transform: none !important;
-    }
-}
-
-// Общие стили для анимаций
-@mixin animation-base {
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
-}
-
-// Анимация появления снизу (fade-in-up)
-.fade-in-up {
-    @include animation-base;
-    transform: translateY($fade-in-distance);
-
-    &.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-// Анимация появления сверху (fade-in-down)
-.fade-in-down {
-    @include animation-base;
-    transform: translateY(-$fade-in-distance);
-
-    &.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-// Анимация появления слева (fade-in-left)
-.fade-in-left {
-    @include animation-base;
-    transform: translateX(-$fade-in-distance);
-
-    &.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-// Анимация появления справа (fade-in-right)
-.fade-in-right {
-    @include animation-base;
-    transform: translateX($fade-in-distance);
-
-    &.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-// Анимация увеличения (fade-in-zoom)
-.fade-in-zoom {
-    @include animation-base;
-    transform: scale(0.9);
-
-    &.animated {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-// Задержки для анимаций
-@for $i from 1 through 10 {
-    .delay-#{$i * 100} {
-        transition-delay: #{$i * 0.1}s !important;
     }
 }
