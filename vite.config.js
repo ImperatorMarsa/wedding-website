@@ -1,15 +1,25 @@
-const path = require("path");
+import { defineConfig } from "vite";
+import path from "path";
 
-export default {
-    root: path.resolve(__dirname, "src"),
+const projectRoot = path.resolve(__dirname);
+
+export default defineConfig({
+    root: "src",
+
+    build: {
+        outDir: path.resolve(projectRoot, "dist"),
+
+        emptyOutDir: true,
+    },
+
     resolve: {
         alias: {
-            bootstrap: path.resolve(__dirname, "node_modules/bootstrap"),
-            jquery: path.resolve(__dirname, "node_modules/jquery"),
+            bootstrap: path.resolve(projectRoot, "node_modules/bootstrap"),
+            jquery: path.resolve(projectRoot, "node_modules/jquery"),
         },
     },
     server: {
         port: 3388,
         hot: true,
     },
-};
+});
