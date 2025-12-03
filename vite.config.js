@@ -5,6 +5,7 @@ const projectRoot = path.resolve(__dirname);
 
 export default defineConfig({
     root: "src",
+    base: "/wedding-website/",
 
     build: {
         outDir: path.resolve(projectRoot, "dist"),
