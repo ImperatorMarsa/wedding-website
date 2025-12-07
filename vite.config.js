@@ -22,5 +22,6 @@ export default defineConfig({
     server: {
         port: 3388,
         hot: true,
+        host: "0.0.0.0"
     },
 });
