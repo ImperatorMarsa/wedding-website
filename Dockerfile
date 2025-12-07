@@ -28,6 +28,6 @@ CMD ["nginx", "-g", "daemon off;"]
 # 
 FROM base AS dev
 
-EXPOSE 3000
-CMD ["npm", "run", "dev"]
+EXPOSE 3388
+CMD ["npm", "start"]
 
