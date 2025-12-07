@@ -1,8 +1,14 @@
+$spacer: 1rem;
+$spacers: (
+    6: $spacer * 4,
+    7: $spacer * 5,
+    8: $spacer * 6,
+    9: $spacer * 7,
+    10: $spacer * 8,
+);
+
 @import "bootstrap/scss/bootstrap";
 @import "fade";
-
-/* @import '@fontsource/roboto/index.css'; */
-/* @import '@fontsource/merriweather/index.css'; */
 
 // Индикатор скролла
 .scroll-indicator {
