@@ -1,9 +1,8 @@
 import "../scss/styles.scss";
 import $ from "jquery";
 
-// Import all of Bootstrap's JS
-
 import ScrollAnimations from "./fade-ini";
+import './backgroundVideo.js';
 
 // Инициализация при полной загрузке DOM
 $(document).ready(function () {
