@@ -84,6 +84,7 @@ $spacers: (
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    filter: brightness(1.55);
 }
 
 .video-vertical {
