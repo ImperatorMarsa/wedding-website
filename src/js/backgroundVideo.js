@@ -1,11 +1,14 @@
+import horizontalVideo from '../video/horizontal.mp4';
+import verticalVideo from '../video/vertical.mp4';
+
 export function initBackgroundVideo() {
     const videoHorizontal = document.querySelector('.video-horizontal');
     const videoVertical = document.querySelector('.video-vertical');
 
     if (!videoHorizontal || !videoVertical) return;
 
-    videoHorizontal.src = '/wedding-website/video/horizontal.mp4';
-    videoVertical.src = '/wedding-website/video/vertical.mp4';
+    videoHorizontal.src = horizontalVideo;
+    videoVertical.src = verticalVideo;
 
     function updateVideo() {
         const aspectRatio = window.innerHeight / window.innerWidth;
@@ -23,6 +26,4 @@ export function initBackgroundVideo() {
     window.addEventListener('resize', updateVideo);
 }
 
-// Автоинициализация
 document.addEventListener("DOMContentLoaded", initBackgroundVideo);
-
