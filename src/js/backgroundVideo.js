@@ -4,8 +4,8 @@ export function initBackgroundVideo() {
 
     if (!videoHorizontal || !videoVertical) return;
 
-    videoHorizontal.src = './video/horizontal.mp4';
-    videoVertical.src = './video/vertical.mp4';
+    videoHorizontal.src = '/wedding-website/video/horizontal.mp4';
+    videoVertical.src = '/wedding-website/video/vertical.mp4';
 
     function updateVideo() {
         const aspectRatio = window.innerHeight / window.innerWidth;
