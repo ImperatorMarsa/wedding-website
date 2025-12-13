@@ -2,7 +2,13 @@ import "../scss/styles.scss";
 import $ from "jquery";
 
 import ScrollAnimations from "./fade-ini";
-import './backgroundVideo.js';
+import "./backgroundVideo.js";
+import "./formSubmit.js";
+
+import { Tooltip } from "bootstrap";
+document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipEl) => {
+    new Tooltip(tooltipEl);
+});
 
 // Инициализация при полной загрузке DOM
 $(document).ready(function () {

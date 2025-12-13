@@ -1,5 +1,26 @@
 @import "bootstrap/scss/bootstrap";
 
+// SCSS для оверлея и спиннера
+.form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); // Темный полупрозрачный фон
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; // Чтобы быть поверх всех полей формы
+    border-radius: $border-radius; // Если используете переменную Bootstrap для радиуса
+}
+
+// Стили для спиннера (используем стандартный Bootstrap)
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
 // Custom variables
 $form-check-color: $dark; // Цвет контура и отметки
 $form-check-bg: transparent; // Прозрачный фон
