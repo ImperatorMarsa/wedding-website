@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Приглашение на свадьбу Анны и Тимофея 22 августа 2026 года">
 
-    <!-- Add CSP meta tag -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-eval' https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://maps.gstatic.com https://*.googleapis.com https://*.ggpht.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com https://*.googleapis.com https://www.google.com; object-src 'none'; media-src 'self'; frame-src 'self' https://www.google.com https://maps.google.com; worker-src 'self';">
-
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap"
@@ -19,8 +15,8 @@
     <title>
         Анна and Тимофей
     </title>
-  <script type="module" crossorigin src="/wedding-website/assets/index-NHXEV-rK.js"></script>
-  <link rel="stylesheet" crossorigin href="/wedding-website/assets/index-BDepZCt-.css">
+  <script type="module" crossorigin src="/wedding-website/assets/index-C3LvMLRq.js"></script>
+  <link rel="stylesheet" crossorigin href="/wedding-website/assets/index-xW_A7-pP.css">
 </head>
 
 <body>
@@ -177,33 +173,25 @@
                     <div class="d-flex justify-content-center flex-wrap gap-3">
 
                         <div class="circle-size rounded-circle" style="background-color: #B2F0C9;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Мятный">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Мятный"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #FADADD;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Нежно-розовый">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Нежно-розовый"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #C287A1;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Пыльно-розовый">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Пыльно-розовый"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #E0BBE4;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Лавандовый">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Лавандовый"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #CCCCFF;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светло-фиолетовый">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светло-фиолетовый"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #B5EAD7;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светло-голубой">
-                        </div>
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светло-голубой"></div>
 
                         <div class="circle-size rounded-circle" style="background-color: #B8A39E;"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светлый Тауп">
-                        </div>
-
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Светлый Тауп"></div>
                     </div>
                 </div>
 
@@ -265,56 +253,41 @@
                     <strong>22 августа 2026 года</strong>, чтобы мы могли учесть все детали.
                 </p>
 
-                <form method="post"
-                    action="https://script.google.com/macros/s/AKfycbwcJe930yFjSTLbDiB9_jbWID1QlCAO7nkrIX6yTi5mq_BEI2jJx5OBLLj2HCjh-jI5Pw/exec">
+                <form id="guestForm" class="animate-on-scroll mt-4 position-relative" method="post"
+                    data-animation="fade-in-up" data-delay="1150">
+
+                    <div id="loadingSpinner" class="form-overlay d-none">
+                        <div class="spinner-border text-light" role="status">
+                            <span class="visually-hidden">
+                                Загрузка...
+                            </span>
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="guestName" class="form-label">
                             Ваше имя и фамилия (или имена, если вас двое)
                         </label>
-                        <input type="text" class="form-control" id="guestName" name="Fio" required
+                        <input type="text" class="form-control" id="guestName" name="Имя" required
                             placeholder="Например: Иван и Мария Петровы">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label d-block">
-                            Планируете ли присутствовать на свадьбе?
+                            Сможете ли Вы присутствовать?
                         </label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Attendance" id="radio1" value="alone">
-                            <label class="form-check-label" for="radio1">
-                                Обязательно приду
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Присутствие" id="attendanceYes"
+                                value="Да" required>
+                            <label class="form-check-label" for="attendanceYes">
+                                Да, смогу
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Attendance" id="radio2"
-                                value="with_partner">
-                            <label class="form-check-label" for="radio2">
-                                Буду со второй половинкой
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Attendance" id="radio3"
-                                value="not_coming">
-                            <label class="form-check-label" for="radio3">
-                                Не смогу присутствовать
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label d-block">
-                            Уточните ваши предпочтения в напитках
-                        </label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check1" name="Drincs" value="soft">
-                            <label class="form-check-label" for="check1">
-                                Безалкогольные напитки
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check2" name="Drincs" value="champagne">
-                            <label class="form-check-label" for="check2">
-                                Шампанское
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Присутствие" id="attendanceNo"
+                                value="Нет">
+                            <label class="form-check-label" for="attendanceNo">
+                                К сожалению, нет
                             </label>
                         </div>
                     </div>
@@ -323,7 +296,7 @@
                         <label for="contactPhone" class="form-label">
                             Ваш контактный телефон (по желанию)
                         </label>
-                        <input type="tel" class="form-control" name="Phone" id="contactPhone"
+                        <input type="tel" class="form-control" id="contactPhone" name="Телефон"
                             placeholder="+7 (___) ___-__-__">
                     </div>
 
@@ -332,14 +305,16 @@
                             Особые пожелания (например, диетические
                             ограничения)
                         </label>
-                        <textarea class="form-control" name="Other" id="specialRequests" rows="3"></textarea>
+                        <textarea class="form-control" id="specialRequests" name="Пожелания" rows="3"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-light">
+                    <button type="submit" class="btn btn-light" id="submitButton">
                         Отправить анкету
                     </button>
                 </form>
             </section>
+
+            <div id="formMessage" class="container col-lg-8 col-md-10 col-11 mx-auto"></div>
         </main>
     </div>
 
