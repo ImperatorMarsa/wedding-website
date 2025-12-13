@@ -264,10 +264,12 @@
                     могли учесть все детали.
                 </p>
 
-                <form class="animate-on-scroll mt-4" data-animation="fade-in-up" data-delay="1150">
+                <form method="POST"
+                    action="https://script.google.com/macros/s/AKfycbxq5CsP55x0MpIOZdDHh-M398NSF-wYc5b79N9WSVSV17Nim8P_U_rLRUxxRDlq47mFfw/exec"
+                    class="animate-on-scroll mt-4" data-animation="fade-in-up" data-delay="1150">
                     <div class="mb-3">
                         <label for="guestName" class="form-label">Ваше имя и фамилия (или имена, если вас двое)</label>
-                        <input type="text" class="form-control" id="guestName" required
+                        <input type="text" class="form-control" id="guestName" name="fio" required
                             placeholder="Например: Иван и Мария Петровы">
                     </div>
 
@@ -292,24 +294,25 @@
                     <div class="mb-3">
                         <label class="form-label d-block">Уточните ваши предпочтения в напитках</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check1" value="soft">
+                            <input class="form-check-input" type="checkbox" id="check1" name="drincs" value="soft">
                             <label class="form-check-label" for="check1">Безалкогольные напитки</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check2" value="champagne">
+                            <input class="form-check-input" type="checkbox" id="check2" name="drincs" value="champagne">
                             <label class="form-check-label" for="check2">Шампанское</label>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="contactPhone" class="form-label">Ваш контактный телефон (по желанию)</label>
-                        <input type="tel" class="form-control" id="contactPhone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" class="form-control" name="phone" id="contactPhone"
+                            placeholder="+7 (___) ___-__-__">
                     </div>
 
                     <div class="mb-3">
                         <label for="specialRequests" class="form-label">Особые пожелания (например, диетические
                             ограничения)</label>
-                        <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                        <textarea class="form-control" name="other" id="specialRequests" rows="3"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-light">
