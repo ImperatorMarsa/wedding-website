@@ -66,6 +66,11 @@ async function submitGuestForm(e) {
     // FormData автоматически собирает пары name/value из полей с атрибутом name
     const formData = new FormData(form);
 
+    // Добавление информации о браузере/ОС (полезные метаданные)
+    formData.append("UserAgent", navigator.userAgent);
+    // Вывод DeviceID в консоль для отладки
+    console.log("Отправляется Device ID:", formData.get("DeviceID"));
+
     try {
         // 3. Отправка данных асинхронно
         const response = await fetch(GOOGLE_SCRIPT_URL, {

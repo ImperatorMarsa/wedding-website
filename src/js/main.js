@@ -3,7 +3,8 @@ import $ from "jquery";
 
 import ScrollAnimations from "./fade-ini";
 import "./backgroundVideo.js";
-import "./formSubmit.js";
+import "./formSubmit.js"; // Логика отправки формы
+import { initializeDeviceIdField } from "./formUtils.js"; // Импорт новой функции
 
 import { Tooltip } from "bootstrap";
 document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipEl) => {
@@ -85,4 +86,6 @@ $(document).ready(function () {
             800,
         );
     });
+
+    initializeDeviceIdField();
 });
