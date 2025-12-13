@@ -16,7 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-    <title>Анна and Тимофей</title>
+    <title>
+        Анна and Тимофей
+    </title>
 </head>
 
 <body>
@@ -257,60 +259,78 @@
                 </h1>
 
                 <p class="animate-on-scroll mt-5" data-animation="fade-in-up" data-delay="1050">
-                    Пожалуйста, подтвердите Ваше присутствие, заполнив небольшую форму до <strong>22 августа 2026
-                        года</strong>, чтобы мы
-                    могли учесть все детали.
+                    Пожалуйста, подтвердите Ваше присутствие, заполнив небольшую форму до
+                    <strong>22 августа 2026 года</strong>, чтобы мы могли учесть все детали.
                 </p>
 
-                <form method="POST"
-                    action="https://script.google.com/macros/s/AKfycbxq5CsP55x0MpIOZdDHh-M398NSF-wYc5b79N9WSVSV17Nim8P_U_rLRUxxRDlq47mFfw/exec"
-                    class="animate-on-scroll mt-4" data-animation="fade-in-up" data-delay="1150">
+                <form method="post"
+                    action="https://script.google.com/macros/s/AKfycbwcJe930yFjSTLbDiB9_jbWID1QlCAO7nkrIX6yTi5mq_BEI2jJx5OBLLj2HCjh-jI5Pw/exec">
                     <div class="mb-3">
-                        <label for="guestName" class="form-label">Ваше имя и фамилия (или имена, если вас двое)</label>
-                        <input type="text" class="form-control" id="guestName" name="fio" required
+                        <label for="guestName" class="form-label">
+                            Ваше имя и фамилия (или имена, если вас двое)
+                        </label>
+                        <input type="text" class="form-control" id="guestName" name="Fio" required
                             placeholder="Например: Иван и Мария Петровы">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label d-block">Планируете ли присутствовать на свадьбе?</label>
+                        <label class="form-label d-block">
+                            Планируете ли присутствовать на свадьбе?
+                        </label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="attendance" id="radio1" value="alone">
-                            <label class="form-check-label" for="radio1">Обязательно приду</label>
+                            <input class="form-check-input" type="radio" name="Attendance" id="radio1" value="alone">
+                            <label class="form-check-label" for="radio1">
+                                Обязательно приду
+                            </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="attendance" id="radio2"
+                            <input class="form-check-input" type="radio" name="Attendance" id="radio2"
                                 value="with_partner">
-                            <label class="form-check-label" for="radio2">Буду со второй половинкой</label>
+                            <label class="form-check-label" for="radio2">
+                                Буду со второй половинкой
+                            </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="attendance" id="radio3"
+                            <input class="form-check-input" type="radio" name="Attendance" id="radio3"
                                 value="not_coming">
-                            <label class="form-check-label" for="radio3">Не смогу присутствовать</label>
+                            <label class="form-check-label" for="radio3">
+                                Не смогу присутствовать
+                            </label>
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label d-block">Уточните ваши предпочтения в напитках</label>
+                        <label class="form-label d-block">
+                            Уточните ваши предпочтения в напитках
+                        </label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check1" name="drincs" value="soft">
-                            <label class="form-check-label" for="check1">Безалкогольные напитки</label>
+                            <input class="form-check-input" type="checkbox" id="check1" name="Drincs" value="soft">
+                            <label class="form-check-label" for="check1">
+                                Безалкогольные напитки
+                            </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check2" name="drincs" value="champagne">
-                            <label class="form-check-label" for="check2">Шампанское</label>
+                            <input class="form-check-input" type="checkbox" id="check2" name="Drincs" value="champagne">
+                            <label class="form-check-label" for="check2">
+                                Шампанское
+                            </label>
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="contactPhone" class="form-label">Ваш контактный телефон (по желанию)</label>
-                        <input type="tel" class="form-control" name="phone" id="contactPhone"
+                        <label for="contactPhone" class="form-label">
+                            Ваш контактный телефон (по желанию)
+                        </label>
+                        <input type="tel" class="form-control" name="Phone" id="contactPhone"
                             placeholder="+7 (___) ___-__-__">
                     </div>
 
                     <div class="mb-3">
-                        <label for="specialRequests" class="form-label">Особые пожелания (например, диетические
-                            ограничения)</label>
-                        <textarea class="form-control" name="other" id="specialRequests" rows="3"></textarea>
+                        <label for="specialRequests" class="form-label">
+                            Особые пожелания (например, диетические
+                            ограничения)
+                        </label>
+                        <textarea class="form-control" name="Other" id="specialRequests" rows="3"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-light">
