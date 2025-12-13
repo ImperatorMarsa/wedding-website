@@ -28,7 +28,7 @@
 
     <!-- Основной контент -->
     <div class="row">
-        <main class="col-lg-8 col-md-10 col-11 container-fluid p-0 mx-auto">
+        <main class="col-lg-8 col-md-10 col-11 container-fluid p-0 mx-auto mb-4">
             <!-- Основная -->
             <section id="main" class="mt-9 container d-flex flex-column justify-content-center">
                 <h1 class="display-1 fw-bold animate-on-scroll text-uppercase" data-animation="fade-in-left"
@@ -245,16 +245,75 @@
             </section>
 
             <!-- Анкета гостя -->
-            <section id="gest_message" class="mt-9 container d-flex flex-column">
+            <section id="attendance" class="mt-9 container d-flex flex-column mb-5">
                 <h1 class="display-1 fw-bold animate-on-scroll text-uppercase" data-animation="fade-in-left"
                     data-delay="800">
-                    Attendace
+                    Attendance
                 </h1>
 
                 <h1 class="fw-light animate-on-scroll text-end text-uppercase font-serif" data-animation="fade-in-left"
                     data-delay="950">
                     Анкета гостя
                 </h1>
+
+                <p class="animate-on-scroll mt-5" data-animation="fade-in-up" data-delay="1050">
+                    Пожалуйста, подтвердите Ваше присутствие, заполнив небольшую форму до <strong>22 августа 2026
+                        года</strong>, чтобы мы
+                    могли учесть все детали.
+                </p>
+
+                <form class="animate-on-scroll mt-4" data-animation="fade-in-up" data-delay="1150">
+                    <div class="mb-3">
+                        <label for="guestName" class="form-label">Ваше имя и фамилия (или имена, если вас двое)</label>
+                        <input type="text" class="form-control" id="guestName" required
+                            placeholder="Например: Иван и Мария Петровы">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label d-block">Планируете ли присутствовать на свадьбе?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="attendance" id="radio1" value="alone">
+                            <label class="form-check-label" for="radio1">Обязательно приду</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="attendance" id="radio2"
+                                value="with_partner">
+                            <label class="form-check-label" for="radio2">Буду со второй половинкой</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="attendance" id="radio3"
+                                value="not_coming">
+                            <label class="form-check-label" for="radio3">Не смогу присутствовать</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label d-block">Уточните ваши предпочтения в напитках</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1" value="soft">
+                            <label class="form-check-label" for="check1">Безалкогольные напитки</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2" value="champagne">
+                            <label class="form-check-label" for="check2">Шампанское</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contactPhone" class="form-label">Ваш контактный телефон (по желанию)</label>
+                        <input type="tel" class="form-control" id="contactPhone" placeholder="+7 (___) ___-__-__">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="specialRequests" class="form-label">Особые пожелания (например, диетические
+                            ограничения)</label>
+                        <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-light">
+                        Отправить анкету
+                    </button>
+                </form>
             </section>
         </main>
     </div>
