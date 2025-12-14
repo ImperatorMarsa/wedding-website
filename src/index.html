@@ -259,8 +259,8 @@
                     <strong>22 августа 2026 года</strong>, чтобы мы могли учесть все детали.
                 </p>
 
-                <form id="guestForm" class="animate-on-scroll mt-4 position-relative" method="post"
-                    data-animation="fade-in-up" data-delay="1150">
+                <form id="guestForm" class="animate-on-scroll mt-4 position-relative needs-validation" method="post"
+                    data-animation="fade-in-up" data-delay="1150" novalidate>
 
                     <input type="hidden" id="deviceId" name="DeviceID" value="">
 
@@ -278,6 +278,9 @@
                         </label>
                         <input type="text" class="form-control" id="guestName" name="Имя" required
                             placeholder="Например: Иван и Мария Петровы">
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите Ваше имя и фамилию.
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -297,6 +300,9 @@
                             <label class="form-check-label" for="attendanceNo">
                                 К сожалению, нет
                             </label>
+                            <div class="invalid-feedback">
+                                Пожалуйста, подтвердите Ваше присутствие.
+                            </div>
                         </div>
                     </div>
 

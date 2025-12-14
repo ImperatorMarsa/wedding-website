@@ -56,6 +56,17 @@ function toggleFormState(isSubmitting) {
 async function submitGuestForm(e) {
     e.preventDefault(); // Останавливаем стандартную перезагрузку страницы
 
+    const isValid = form.checkValidity();
+
+    // Добавляем класс, который активирует стили валидации Bootstrap
+    form.classList.add("was-validated");
+    if (!isValid) {
+        // Если форма не прошла валидацию, предотвращаем ее отправку
+        e.stopPropagation();
+
+        return;
+    }
+
     // Сброс предыдущих сообщений
     messageContainer.innerHTML = "";
 
@@ -86,7 +97,6 @@ async function submitGuestForm(e) {
 
         if (result.result === "success") {
             displayMessage("success", "✅ Анкета успешно отправлена! Спасибо за подтверждение.");
-            form.reset(); // Очистить форму после успешной отправки
         } else {
             // Если скрипт вернул ошибку
             displayMessage(
@@ -110,5 +120,5 @@ async function submitGuestForm(e) {
 
 // Добавление слушателя события на отправку формы
 if (form) {
-    form.addEventListener("submit", submitGuestForm);
+    form.addEventListener("submit", submitGuestForm, false);
 }
