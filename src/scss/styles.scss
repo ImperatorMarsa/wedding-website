@@ -13,7 +13,11 @@ $spacers: (
     10: $spacer * 8,
 );
 
+// Google Fonts 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Cormorant:wght@300&display=swap');
+// Bootstrap
 @import "bootstrap/scss/bootstrap";
+// Other
 @import "fade";
 @import "form";
 
@@ -53,7 +57,7 @@ $spacers: (
 }
 
 .font-serif {
-    font-family: 'Merriweather', 'Times New Roman', Times, Georgia, serif;
+    font-family: 'Cormorant', 'Merriweather', 'Times New Roman', Times, Georgia, serif;
 }
 
 .map-width {
