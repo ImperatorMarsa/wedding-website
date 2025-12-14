@@ -347,9 +347,6 @@
                             <label class="form-check-label" for="attendanceNo">
                                 К сожалению, нет
                             </label>
-                            <div class="invalid-feedback">
-                                Пожалуйста, подтвердите Ваше присутствие.
-                            </div>
                         </div>
                     </div>
 
@@ -359,6 +356,37 @@
                         </label>
                         <input type="tel" class="form-control" id="contactPhone" name="Телефон"
                             placeholder="+7 (___) ___-__-__">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">
+                            Количество гостей
+                        </label>
+                        <input type="number" class="form-control" id="guests" name="Кол-во гостей" min="1" max="7"
+                            value="1" />
+                        <div class="invalid-feedback">
+                            Пожалуйста, укажите количество гостей.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Трансфер после свадьбы
+                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Трансфер" id="transferOwn"
+                                value="Уеду на своем транспорте" required>
+                            <label class="form-check-label" for="transferOwn">
+                                Уеду на своем транспорте
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Трансфер" id="transferNeed"
+                                value="Мне нужен транспорт после свадьбы до города">
+                            <label class="form-check-label" for="transferNeed">
+                                Да, мне нужен транспорт после свадьбы до города
+                            </label>
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -375,7 +403,7 @@
                 </form>
             </section>
 
-            <div id="formMessage" class="container col-lg-8 col-md-10 col-11 mx-auto"></div>
+            <div id="formMessage" class="container mx-auto"></div>
         </main>
     </div>
 
