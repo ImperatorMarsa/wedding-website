@@ -254,7 +254,8 @@
                     Мы будем очень благодарны, если вы поддержите цветовую палитру нашей свадьбы.
                 </p>
 
-                <button class="btn btn-light animate-on-scroll" data-animation="fade-in-up" data-delay="1150">
+                <button class="btn btn-light animate-on-scroll" data-animation="fade-in-up" data-delay="1150"
+                    data-bs-toggle="modal" data-bs-target="#dressCodeModal">
                     примеры образов
                 </button>
             </section>
@@ -286,10 +287,6 @@
                     них привезёте на свадьбу корм для животных, который после праздника мы отвезём
                     в приют «Лучший друг», чтобы порадовать наших хвостатых друзей.
                 </p>
-
-                <button class="btn btn-light animate-on-scroll" data-animation="fade-in-up" data-delay="1150">
-                    цветочная подписка
-                </button>
             </section>
 
             <!-- Анкета гостя -->
@@ -380,6 +377,26 @@
 
             <div id="formMessage" class="container col-lg-8 col-md-10 col-11 mx-auto"></div>
         </main>
+    </div>
+
+    <div class="modal fade" id="dressCodeModal" tabindex="-1" aria-labelledby="dressCodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dressCodeModalLabel">Примеры образов в нашей палитре</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="./img/dresscode-examples.png" alt="Примеры дресс-кода в свадебной палитре"
+                        class="img-fluid rounded">
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Закрыть
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="./js/main.js"></script>
