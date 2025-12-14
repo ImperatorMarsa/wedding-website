@@ -27,6 +27,10 @@ function displayMessage(type, message) {
     `;
     messageContainer.innerHTML = alertHTML;
 
+    if (type === "error") {
+        // Добавляем класс, который активирует стили валидации Bootstrap
+        form.classList.add("was-validated");
+    }
     // Прячем сообщение через 5 секунд (если это успех)
     if (type === "success") {
         setTimeout(() => {
@@ -73,6 +77,9 @@ async function submitGuestForm(e) {
     // 1. Блокировка формы и отображение спиннера
     toggleFormState(true);
 
+    // Сбрасываем состояние валидации Bootstrap
+    form.classList.remove("was-validated");
+
     // 2. Сбор данных формы
     // FormData автоматически собирает пары name/value из полей с атрибутом name
     const formData = new FormData(form);
@@ -97,6 +104,9 @@ async function submitGuestForm(e) {
 
         if (result.result === "success") {
             displayMessage("success", "✅ Анкета успешно отправлена! Спасибо за подтверждение.");
+
+            // Очищаем форму от введенных данных
+            form.reset();
         } else {
             // Если скрипт вернул ошибку
             displayMessage(
