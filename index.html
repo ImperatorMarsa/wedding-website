@@ -323,27 +323,29 @@
 
                     <div class="mb-3">
                         <label for="guestName" class="form-label">
-                            Ваше имя и фамилия (или имена, если Вас двое)
+                            Ваше имя и фамилия (или имена, если Вас двое или более)
                         </label>
-                        <input type="text" class="form-control" id="guestName" name="Имя" required
-                            placeholder="Например: Иван и Мария Петровы">
+                        <input type="text" class="form-control" id="guestName" name="Имя" required>
                         <div class="invalid-feedback">
                             Пожалуйста, введите Ваше имя и фамилию.
+                        </div>
+                        <div id="guestNameHelp" class="form-text">
+                            Иванов Коля; семья Петровых; Сидоров Саша и Иванова Наташа;...
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label d-block">
-                            Сможете ли Вы присутствовать?
+                            Планируете ли Вы присутствовать на нашей свадьбе?
                         </label>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="Присутствие" id="attendanceYes"
                                 value="Да" required>
                             <label class="form-check-label" for="attendanceYes">
                                 Да, смогу
                             </label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="Присутствие" id="attendanceNo"
                                 value="Нет">
                             <label class="form-check-label" for="attendanceNo">
@@ -362,13 +364,91 @@
 
                     <div class="mb-3">
                         <label for="guests" class="form-label">
-                            Количество гостей
+                            Сколько человек придет от вашей семьи?
                         </label>
                         <input type="number" class="form-control" id="guests" name="Кол-во гостей" min="1" max="7"
-                            value="1" />
+                            value="1" required>
                         <div class="invalid-feedback">
                             Пожалуйста, укажите количество гостей.
                         </div>
+                        <div id="guestsHelp" class="form-text">
+                            Укажите, пожалуйста, количество.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">
+                            Будут ли с Вами дети?
+                        </label>
+                        <textarea class="form-control" id="childrens" name="Дети" rows="3"></textarea>
+                        <div id="childrensHelp" class="form-text">
+                            Укажите, пожалуйста, количество детей и их возраст.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label d-block">
+                            Предпочтения по напиткам (укажите то, что нравится)
+                        </label>
+                        <div id="drinkHelp" class="form-text">
+                            Выберите один или несколько ответов.
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-vine-dry"
+                                value="Я буду трезв!" checked>
+                            <label class="form-check-label" for="drink-vine-dry">
+                                Я буду трезв!
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-vine-dry"
+                                value="Вино белое, сухое">
+                            <label class="form-check-label" for="drink-vine-dry">
+                                Вино белое, сухое
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-vine-sweet"
+                                value="Вино белое, полусладкое">
+                            <label class="form-check-label" for="drink-vine-sweet">
+                                Вино белое, полусладкое
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-champagne-dry"
+                                value="Шампанское брют">
+                            <label class="form-check-label" for="drink-champagne-dry">
+                                Шампанское брют
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-champagne-sweet"
+                                value="Шампанское полусладкое">
+                            <label class="form-check-label" for="drink-champagne-sweet">
+                                Шампанское полусладкое
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-vodka"
+                                value="Водка">
+                            <label class="form-check-label" for="drink-vodka">
+                                Водка
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Напитки" id="drink-skotch"
+                                value="Коньяк">
+                            <label class="form-check-label" for="drink-skotch">
+                                Коньяк
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="allergies" class="form-label">
+                            Есть ли аллергия/непереносимость/неприязнь к каким-либо продуктам?
+                        </label>
+                        <textarea class="form-control" id="allergies" name="Алергия" rows="3" required></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -393,10 +473,12 @@
 
                     <div class="mb-3">
                         <label for="specialRequests" class="form-label">
-                            Особые пожелания (например, диетические
-                            ограничения)
+                            Нужно ли нам знать что-либо ещё, чего нет в это анкете?
                         </label>
                         <textarea class="form-control" id="specialRequests" name="Пожелания" rows="3"></textarea>
+                        <div id="specialRequestsHelp" class="form-text">
+                            Напишите, и мы постараемся это учесть.
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-light" id="submitButton">
