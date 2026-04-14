@@ -26,8 +26,8 @@ function scrollToFirstInvalidField() {
         if (parent) target = parent;
     }
 
-    // Прокрутка с учётом фиксированного хедера (отступ 20px)
-    const top = target.getBoundingClientRect().top + window.scrollY - 20;
+    // Прокрутка с учётом фиксированного хедера (отступ 40px)
+    const top = target.getBoundingClientRect().top + window.scrollY - 40;
     window.scrollTo({ top, behavior: "smooth" });
 
     // Фокус на поле (если это не radio/checkbox — на сам input, иначе на label)
