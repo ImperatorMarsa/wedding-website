@@ -7,7 +7,7 @@ import "./formSubmit.js"; // Логика отправки формы
 import "./countdown";
 import { initializeDeviceIdField } from "./formUtils.js"; // Импорт новой функции
 
-import { Tooltip } from "bootstrap";
+import { Tooltip, Alert } from "bootstrap";
 document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltipEl) => {
     new Tooltip(tooltipEl);
 });
@@ -50,17 +50,6 @@ $(document).ready(function () {
         }
     });
 
-    // Обработка отправки формы (пример)
-    $("form").on("submit", function (e) {
-        e.preventDefault();
-
-        // Здесь обычно отправка формы через AJAX
-        alert("Форма отправлена! В реальном приложении здесь будет AJAX запрос.");
-
-        // Сброс формы
-        this.reset();
-    });
-
     // Обновление анимаций при изменении размера окна (с задержкой для производительности)
     let resizeTimer;
     $(window).on("resize", function () {
@@ -68,24 +57,6 @@ $(document).ready(function () {
         resizeTimer = setTimeout(function () {
             scrollAnimations.update();
         }, 250);
-    });
-
-    // Добавление элементов по кнопке (для демонстрации работы update())
-    $("#add-element-btn").on("click", function () {
-        const newElement = $(
-            '<div class="col-md-4"><div class="card h-100 shadow-sm animate-on-scroll" data-animation="fade-in-up" data-delay="200"><div class="card-body text-center p-4"><h4>Новый элемент</h4><p>Динамически добавленный элемент с анимацией.</p></div></div></div>',
-        );
-
-        $(".row.g-4").append(newElement);
-        scrollAnimations.update();
-
-        // Прокрутка к новому элементу
-        $("html, body").animate(
-            {
-                scrollTop: newElement.offset().top - 100,
-            },
-            800,
-        );
     });
 
     initializeDeviceIdField();
