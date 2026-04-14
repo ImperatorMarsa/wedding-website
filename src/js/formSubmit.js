@@ -51,6 +51,17 @@ function displayMessage(type, message) {
     `;
     messageContainer.innerHTML = alertHTML;
 
+    // Прокрутка к сообщению при успехе
+    if (type === "success") {
+        setTimeout(() => {
+            const alertEl = messageContainer.querySelector(".alert");
+            if (alertEl) {
+                const top = alertEl.getBoundingClientRect().top + window.scrollY - 20;
+                window.scrollTo({ top, behavior: "smooth" });
+            }
+        }, 100);
+    }
+
     if (type === "error") {
         // Добавляем класс, который активирует стили валидации Bootstrap
         form.classList.add("was-validated");
