@@ -12,6 +12,30 @@ const spinner = document.getElementById("loadingSpinner");
 const submitButton = document.getElementById("submitButton");
 const messageContainer = document.getElementById("formMessage");
 
+/**
+ * Находит первое невалидное поле в форме и прокручивает к нему.
+ */
+function scrollToFirstInvalidField() {
+    const invalidField = form.querySelector(":invalid");
+    if (!invalidField) return;
+
+    // Для radio/checkbox ищем ближайший родительский .form-check или .mb-3
+    let target = invalidField;
+    if (invalidField.type === "radio" || invalidField.type === "checkbox") {
+        const parent = invalidField.closest(".form-check, .mb-3");
+        if (parent) target = parent;
+    }
+
+    // Прокрутка с учётом фиксированного хедера (отступ 20px)
+    const top = target.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top, behavior: "smooth" });
+
+    // Фокус на поле (если это не radio/checkbox — на сам input, иначе на label)
+    if (invalidField.type !== "radio" && invalidField.type !== "checkbox") {
+        invalidField.focus();
+    }
+}
+
 // Функция для отображения сообщений (Success/Error)
 function displayMessage(type, message) {
     // Удаляем предыдущие сообщения
@@ -67,6 +91,9 @@ async function submitGuestForm(e) {
     if (!isValid) {
         // Если форма не прошла валидацию, предотвращаем ее отправку
         e.stopPropagation();
+
+        // Прокрутка к первому невалидному полю
+        scrollToFirstInvalidField();
 
         return;
     }
