@@ -20,7 +20,7 @@ function formatNumber(number, isDays = false) {
  * Инициализирует и запускает обратный отсчет до даты свадьбы.
  * @param {string} targetDate - Дата, до которой ведется обратный отсчет в формате "YYYY-MM-DD HH:MM:SS".
  */
-export function initCountdown(targetDate = "2026-08-22 17:00:00") {
+export function initCountdown(targetDate = "2026-07-26 12:00:00") {
     const targetTime = new Date(targetDate).getTime();
 
     const spanDays = document.getElementById("days");
